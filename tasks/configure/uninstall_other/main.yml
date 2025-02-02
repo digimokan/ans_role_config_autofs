@@ -1,4 +1,4 @@
-- name: "Uninstall conflicting auto-mount packages: '{{ autofs_conflict_package_uninstall_list }}'"
+- name: "Uninstall conflicting device auto-mount packages: '{{ autofs_conflict_package_uninstall_list }}'"
   ansible.builtin.package:
     name: "{{ autofs_conflict_package_uninstall_list }}"
     state: absent
