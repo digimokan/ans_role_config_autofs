@@ -1,6 +1,6 @@
 - name: "Uninstall other device auto-mounters"
   ansible.builtin.include_tasks: uninstall_other/main.yml
-  when: automount_remove_other_auto_mounters and
+  when: autofs_remove_other_device_auto_mounters and
         autofs_enable_auto_device_mounting
 
 - name: "Configure device auto-mounting"
