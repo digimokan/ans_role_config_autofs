@@ -1,0 +1,4 @@
+# command to execute to manually mount an available/exported NFS share
+# E.g. 'mount -t nfs'
+autofs_mount_nfs_share_cmd: 'false'
+
