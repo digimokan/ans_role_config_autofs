@@ -1,3 +1,15 @@
+# Note: autofs_service_names var not propagating to this handler, so improvise
+- name: "Set autofs_service_names var for Linux"
+  ansible.builtin.set_fact:
+    autofs_service_names: "{{ autofs_linux_service_names }}"
+  when: ansible_system == "Linux"
+
+# Note: autofs_service_names var not propagating to this handler, so improvise
+- name: "Set autofs_service_names var for FreeBSD"
+  ansible.builtin.set_fact:
+    autofs_service_names: "{{ autofs_freebsd_service_names }}"
+  when: ansible_os_family == "FreeBSD"
+
 - name: "Restart all autofs services"
   ansible.builtin.service:
     name: "{{ service_name }}"
