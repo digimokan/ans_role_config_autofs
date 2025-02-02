@@ -57,6 +57,8 @@ Install and configure the autofs automatic device/NFS-mounting utility.
          ansible.builtin.include_role:
            name: ans_role_config_autofs
            public: true
+         vars:
+           autofs_mount_nfs_share_cmd: 'mount -t nfs'
    ```
 
 ## Role Options
