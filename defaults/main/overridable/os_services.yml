@@ -2,7 +2,9 @@
 autofs_linux_service_enable_names:
     - "autofs"
 autofs_freebsd_service_enable_names:
-    - "autofs"
+    - "automount"
+    - "automountd"
+    - "autounmountd"
 
 # the collection of autofs services that must be started
 autofs_linux_service_start_names:
