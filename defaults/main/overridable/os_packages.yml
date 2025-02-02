@@ -1,0 +1,33 @@
+# main autofs package to install (if empty str, pkg is OS built-in)
+autofs_ubuntu_main_package_name: 'autofs'
+autofs_freebsd_main_package_name: ''
+
+# package to install to support exfat filesystems
+autofs_ubuntu_exfat_filesystems_package_list:
+  - "exfat-fuse"
+  - "exfat-utils"
+  - "exfatprogs"
+autofs_freebsd_exfat_filesystems_package_list:
+  - "fusefs-exfat"
+  - "exfat-utils"
+
+# package to install to support ntfs filesystems
+autofs_ubuntu_ntfs_filesystems_package: 'ntfs-3g'
+autofs_freebsd_ntfs_filesystems_package: 'fusefs-ntfs'
+
+# package to install to support ext2/ext4 filesystems
+autofs_ubuntu_ext2_ext4_filesystems_package: 'e2fsprogs'
+autofs_freebsd_ext2_ext4_filesystems_package: 'fusefs-ext2'
+
+# package to install to support HFS filesystems
+autofs_ubuntu_hfs_filesystems_package: 'hfsprogs'
+autofs_freebsd_hfs_filesystems_package: 'fusefs-hfsfuse'
+
+# package to install to support XFS filesystems
+autofs_ubuntu_xfs_filesystems_package: 'xfsprogs'
+autofs_freebsd_xfs_filesystems_package: 'fusefs-lkl'
+
+# package to install to support MTP filesystems
+autofs_ubuntu_mtp_filesystems_package: 'jmtpfs'
+autofs_freebsd_mtp_filesystems_package: 'fusefs-simple-mtpfs'
+

@@ -1,0 +1,17 @@
+galaxy_info:
+  author: digimokan
+  description: "Install and configure the autofs automatic device/NFS-mounting utility"
+  license: "MIT"
+  min_ansible_version: 2.5
+  platforms:
+    - name: Ubuntu
+      versions:
+        - all
+    - name: FreeBSD
+      versions:
+        - all
+  galaxy_tags:
+    - ubuntu
+    - freebsd
+    - autofs
+

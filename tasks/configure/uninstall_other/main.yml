@@ -1,0 +1,8 @@
+- name: "Uninstall conflicting auto-mount packages: '{{ autofs_conflict_package_uninstall_list }}'"
+  ansible.builtin.package:
+    name: "{{ autofs_conflict_package_uninstall_list }}"
+    state: absent
+  become: true
+  become_user: root
+  notify: restart_autofs_services
+

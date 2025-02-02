@@ -1,0 +1,6 @@
+# autofs directory where NFS shares are mounted
+autofs_nfs_share_mount_dir: '/net'
+
+# autofs directory where removable media devices are mounted
+autofs_device_mount_dir: '/media'
+

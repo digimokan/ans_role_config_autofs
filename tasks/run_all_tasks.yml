@@ -1,0 +1,6 @@
+- name: "Install autofs utility and supporting packages"
+  ansible.builtin.include_tasks: install/main.yml
+
+- name: "Configure autofs utility"
+  ansible.builtin.include_tasks: configure/main.yml
+

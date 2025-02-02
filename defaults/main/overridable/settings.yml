@@ -1,0 +1,17 @@
+# enable automatic mounting of devices on device-attach
+autofs_enable_auto_device_mounting: false
+
+# enable automatic mounting of NFS shares on NFS-share-access
+autofs_enable_auto_nfs_share_mounting: false
+
+# uninstall and disable other device auto-mounters
+autofs_remove_other_device_auto_mounters: true
+
+# when device auto-mounting enabled, support various filesystems
+autofs_support_exfat_filesystems: true
+autofs_support_ntfs_filesystems: true
+autofs_support_ext2_ext4_filesystems: true
+autofs_support_hfs_filesystems: false
+autofs_support_xfs_filesystems: false
+autofs_support_mtp_filesystems: false
+

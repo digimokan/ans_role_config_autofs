@@ -1,0 +1,8 @@
+- name: "Install the main autofs package: '{{ autofs_main_package_name }}'"
+  ansible.builtin.package:
+    name: "{{ autofs_main_package_name }}"
+    state: present
+  become: true
+  become_user: root
+  when: (autofs_main_package_name)
+

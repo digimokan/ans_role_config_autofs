@@ -1,0 +1,29 @@
+- name: "Create automatic device mounting dir at '{{ autofs_device_mount_dir }}'"
+  ansible.builtin.file:
+    path: "{{ autofs_device_mount_dir }}"
+    state: directory
+  become: true
+  become_user: root
+  when: autofs_enable_auto_device_mounting
+  notify: restart_autofs_services
+
+- name: "In '{{ autofs_auto_master_path }}', {{ feature_enable }} automatic device mounting"
+  ansible.builtin.lineinfile:
+    path: "{{ autofs_auto_master_path }}"
+    regexp: >-
+      ^(\S+)(\s+){{ template_path }}
+    line: >-
+      {{ comment_out }}{{ mount_dir }} {{ template_path }} {{ mount_opts }}
+    state: present
+    backrefs: true
+    backup: true
+  vars:
+    feature_enable: "{{ 'enable' if autofs_enable_auto_device_mounting else 'disable' }}"
+    comment_out: "{{ '' if  autofs_enable_auto_device_mounting else '#' }}"
+    mount_dir: "{{ autofs_device_mount_dir }}"
+    template_path: "{{ autofs_device_mounting_template_path }}"
+    mount_opts: "{{ autofs_device_mounting_options }}"
+  become: true
+  become_user: root
+  notify: restart_autofs_services
+

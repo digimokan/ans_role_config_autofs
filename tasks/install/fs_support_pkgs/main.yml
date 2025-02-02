@@ -1,0 +1,54 @@
+- name: "Install exFAT support packages: '{{ autofs_exfat_filesystems_package_list }}'"
+  ansible.builtin.package:
+    name: "{{ autofs_exfat_filesystems_package_list }}"
+    state: present
+  become: true
+  become_user: root
+  when: autofs_support_exfat_filesystems
+  notify: restart_autofs_services
+
+- name: "Install NTFS R/W support package: '{{ autofs_ntfs_filesystems_package }}'"
+  ansible.builtin.package:
+    name: "{{ autofs_ntfs_filesystems_package }}"
+    state: present
+  become: true
+  become_user: root
+  when: autofs_support_ntfs_filesystems
+  notify: restart_autofs_services
+
+- name: "Install ext2/ext4 support package: '{{ autofs_ext2_ext4_filesystems_package }}'"
+  ansible.builtin.package:
+    name: "{{ autofs_ext2_ext4_filesystems_package }}"
+    state: present
+  become: true
+  become_user: root
+  when: autofs_support_ext2_ext4_filesystems
+  notify: restart_autofs_services
+
+- name: "Install HFS support package: '{{ autofs_hfs_filesystems_package }}'"
+  ansible.builtin.package:
+    name: "{{ autofs_hfs_filesystems_package }}"
+    state: present
+  become: true
+  become_user: root
+  when: autofs_support_hfs_filesystems
+  notify: restart_autofs_services
+
+- name: "Install XFS support package: '{{ autofs_xfs_filesystems_package }}'"
+  ansible.builtin.package:
+    name: "{{ autofs_xfs_filesystems_package }}"
+    state: present
+  become: true
+  become_user: root
+  when: autofs_support_xfs_filesystems
+  notify: restart_autofs_services
+
+- name: "Install MTP support package: '{{ autofs_mtp_filesystems_package }}'"
+  ansible.builtin.package:
+    name: "{{ autofs_mtp_filesystems_package }}"
+    state: present
+  become: true
+  become_user: root
+  when: autofs_support_mtp_filesystems
+  notify: restart_autofs_services
+

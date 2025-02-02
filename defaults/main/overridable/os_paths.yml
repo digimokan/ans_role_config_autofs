@@ -1,0 +1,20 @@
+# path to autofs's auto_master config file
+autofs_linux_auto_master_path: '/etc/auto.master'
+autofs_freebsd_auto_master_path: '/etc/auto_master'
+
+# path (or keyword) to autofs-supplied device mounting template file
+autofs_linux_device_mounting_template_path: '-media'
+autofs_freebsd_device_mounting_template_path: '-media'
+
+# path (or keyword) to autofs-supplied NFS share mounting template file
+autofs_linux_nfs_share_mounting_template_path: '-hosts'
+autofs_freebsd_nfs_share_mounting_template_path: '-hosts'
+
+# default options for device mounting
+autofs_linux_device_mounting_options: '-nosuid,noatime,autoro'
+autofs_freebsd_device_mounting_options: '-nosuid,noatime,autoro'
+
+# default options for NFS share mounting
+autofs_linux_nfs_share_mounting_options: '-nobrowse,nosuid,intr'
+autofs_freebsd_nfs_share_mounting_options: '-nobrowse,nosuid,intr'
+

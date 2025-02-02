@@ -1,0 +1,6 @@
+- name: "Install main autofs package"
+  ansible.builtin.include_tasks: main_pkg/main.yml
+
+- name: "Install filesystem-support library packages"
+  ansible.builtin.include_tasks: fs_support_pkgs/main.yml
+

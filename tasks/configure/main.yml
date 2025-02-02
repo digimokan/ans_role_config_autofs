@@ -1,0 +1,13 @@
+- name: "Uninstall other auto-mounters"
+  ansible.builtin.include_tasks: uninstall_other/main.yml
+  when: automount_remove_other_auto_mounters
+
+- name: "Configure device auto-mounting"
+  ansible.builtin.include_tasks: device_mounting/main.yml
+
+- name: "Configure NFS share auto-mounting"
+  ansible.builtin.include_tasks: nfs_mounting/main.yml
+
+- name: "Configure autofs service"
+  ansible.builtin.include_tasks: service/main.yml
+
