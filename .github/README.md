@@ -59,6 +59,8 @@ Install and configure the autofs automatic device/NFS-mounting utility.
            public: true
          vars:
            autofs_mount_nfs_share_cmd: 'mount -t nfs'
+           autofs_enable_auto_device_mounting: false
+           autofs_enable_auto_nfs_share_mounting: true
    ```
 
 ## Role Options
