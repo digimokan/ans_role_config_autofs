@@ -4,7 +4,7 @@
     state: restarted
   become: true
   become_user: root
-  loop: "{{ autofs_service_start_names }}"
+  loop: "{{ autofs_service_names }}"
   loop_control:
     loop_var: service_name
   listen: restart_autofs_services

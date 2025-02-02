@@ -4,7 +4,7 @@
     enabled: true
   become: true
   become_user: root
-  loop: "{{ autofs_service_enable_names }}"
+  loop: "{{ autofs_service_names }}"
   loop_control:
     loop_var: service_name
 
@@ -14,7 +14,8 @@
     state: started
   become: true
   become_user: root
-  loop: "{{ autofs_service_start_names }}"
+  changed_when: false
+  loop: "{{ autofs_service_names }}"
   loop_control:
     loop_var: service_name
 

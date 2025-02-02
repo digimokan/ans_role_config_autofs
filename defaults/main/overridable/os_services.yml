@@ -1,15 +1,7 @@
-# the collection of autofs services that must be enabled
-autofs_linux_service_enable_names:
+# the collection of autofs services that must be started and enabled
+autofs_linux_service_names:
     - "autofs"
-autofs_freebsd_service_enable_names:
-    - "automount"
-    - "automountd"
-    - "autounmountd"
-
-# the collection of autofs services that must be started
-autofs_linux_service_start_names:
-    - "autofs"
-autofs_freebsd_service_start_names:
+autofs_freebsd_service_names:
     - "automount"
     - "automountd"
     - "autounmountd"
