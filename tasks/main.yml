@@ -15,7 +15,7 @@
     autofs_hfs_filesystems_package: "{{ autofs_ubuntu_hfs_filesystems_package }}"
     autofs_xfs_filesystems_package: "{{ autofs_ubuntu_xfs_filesystems_package }}"
     autofs_mtp_filesystems_package: "{{ autofs_ubuntu_mtp_filesystems_package }}"
-  when: ansible_os_family == "Ubuntu"
+  when: ansible_distribution == "Ubuntu"
 
 - name: "Run all role tasks for FreeBSD"
   ansible.builtin.include_tasks: run_all_tasks.yml
